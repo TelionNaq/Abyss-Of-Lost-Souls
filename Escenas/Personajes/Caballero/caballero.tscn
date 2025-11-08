@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://b6yrcx7atdvno"]
+
+[ext_resource type="Script" uid="uid://jcw0ek2nio66" path="res://Escenas/Personajes/Caballero/caballero.gd" id="1_hw5py"]
+[ext_resource type="Texture2D" uid="uid://dqrxh5j1xxq6f" path="res://menu/assets_characters/Sword/defaul__sword/ataque_abajo.png" id="1_m4p58"]
+[ext_resource type="Texture2D" uid="uid://b383ja6xn7iyh" path="res://menu/assets_characters/Sword/defaul__sword/idle_abajo.png" id="2_hw5py"]
+[ext_resource type="Texture2D" uid="uid://cysr5ldosuuul" path="res://menu/assets_characters/Sword/defaul__sword/ataque_arriba.png" id="3_212ms"]
+[ext_resource type="Texture2D" uid="uid://cf6csrg18rcsj" path="res://menu/assets_characters/Sword/defaul__sword/idle arriba.png" id="4_jj8lu"]
+[ext_resource type="Texture2D" uid="uid://crfsmn10tjcd8" path="res://menu/assets_characters/Sword/defaul__sword/ataque_derecha.png" id="5_0ke8n"]
+[ext_resource type="Texture2D" uid="uid://lqd2h4moraln" path="res://menu/assets_characters/Sword/defaul__sword/idle__derecha.png" id="6_365mq"]
+[ext_resource type="Texture2D" uid="uid://d275t45q1ievv" path="res://menu/assets_characters/Sword/defaul__sword/ataque_izquierda.png" id="7_b4huq"]
+[ext_resource type="Texture2D" uid="uid://dy4tesaqm6r8" path="res://menu/assets_characters/Sword/defaul__sword/idle__izquierda.png" id="8_pekix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uf1"]
+size = Vector2(79.5, 79)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3o51"]
+radius = 61.0
+height = 210.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7qcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m4p58")
+}],
+"loop": false,
+"name": &"abajo_atacar",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hw5py")
+}],
+"loop": true,
+"name": &"abajo_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_212ms")
+}],
+"loop": false,
+"name": &"arriba_atacar",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jj8lu")
+}],
+"loop": true,
+"name": &"arriba_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0ke8n")
+}],
+"loop": false,
+"name": &"derecha_atacar",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_365mq")
+}],
+"loop": true,
+"name": &"derecha_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_b4huq")
+}],
+"loop": false,
+"name": &"izquierda_atacar",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pekix")
+}],
+"loop": true,
+"name": &"izquierda_idle",
+"speed": 3.0
+}]
+
+[node name="Caballero" type="StaticBody2D"]
+script = ExtResource("1_hw5py")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_i0uf1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 57)
+shape = SubResource("CapsuleShape2D_a3o51")
+debug_color = Color(0.950028, 0.21081, 0.20294, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.099, 0.09)
+sprite_frames = SubResource("SpriteFrames_p7qcq")
+animation = &"abajo_idle"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

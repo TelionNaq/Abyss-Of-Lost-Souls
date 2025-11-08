@@ -1,0 +1,469 @@
+[gd_scene load_steps=67 format=3 uid="uid://dno6skdngt6ir"]
+
+[ext_resource type="Texture2D" uid="uid://bitqpwnvmi6if" path="res://menu/choose_character/bg_morphblade.png" id="1_8miaq"]
+[ext_resource type="Script" uid="uid://d2gihlc6saqp7" path="res://character_menu.gd" id="1_pi0qd"]
+[ext_resource type="Script" uid="uid://bttbdnxe8giih" path="res://menu/choose_character/character_data.gd" id="2_5thor"]
+[ext_resource type="Texture2D" uid="uid://rgsp1rk5lqgy" path="res://menu/choose_character/character_swordman.png" id="2_pi0qd"]
+[ext_resource type="Texture2D" uid="uid://fqf71nb48kdm" path="res://menu/choose_character/bg_death.png" id="5_vpp8e"]
+[ext_resource type="Texture2D" uid="uid://bkux6wgef78n5" path="res://menu/choose_character/character_assasin.png" id="6_e88ij"]
+[ext_resource type="Texture2D" uid="uid://fdchuwteac4p" path="res://menu/choose_character/bg_magician.png" id="7_fj42r"]
+[ext_resource type="Texture2D" uid="uid://cwv23cbvl6xxf" path="res://menu/choose_character/character_magician.png" id="8_ivohy"]
+[ext_resource type="Texture2D" uid="uid://j662tvjq7epa" path="res://menu/choose_character/border1.png" id="9_8w61y"]
+[ext_resource type="Script" uid="uid://hhr62f3lljqx" path="res://menu/choose_character/mb_perso.gd" id="10_320as"]
+[ext_resource type="FontFile" uid="uid://4ebsb7wkw3f0" path="res://TrajanPro-Bold.otf" id="10_dggry"]
+[ext_resource type="Texture2D" uid="uid://b5ygoikjcs13" path="res://menu/choose_character/attrange.png" id="11_324vb"]
+[ext_resource type="Texture2D" uid="uid://bxt038826kbtb" path="res://menu/choose_character/characters_button_morphblade.png" id="11_cge33"]
+[ext_resource type="Texture2D" uid="uid://cxl7ar7e00u4g" path="res://menu/choose_character/mb_hover.png" id="11_gqaf1"]
+[ext_resource type="Texture2D" uid="uid://dphmwpj2tj7wu" path="res://menu/choose_character/personalidades/mb_perso2.png" id="11_q4jn2"]
+[ext_resource type="Texture2D" uid="uid://bef4hd4tkjufu" path="res://menu/choose_character/attdmg.png" id="12_21crc"]
+[ext_resource type="Texture2D" uid="uid://dcwqbuob31av5" path="res://menu/choose_character/personalidades/mb_perso3.png" id="12_bmdli"]
+[ext_resource type="Texture2D" uid="uid://5k8n3d43senk" path="res://menu/choose_character/mb_true.png" id="12_e88ij"]
+[ext_resource type="Texture2D" uid="uid://cfisqvixf0xdl" path="res://menu/choose_character/characters_button_assasin.png" id="12_gqaf1"]
+[ext_resource type="Texture2D" uid="uid://b4176hofwrw7n" path="res://menu/choose_character/character_button_nightfall.png" id="13_324vb"]
+[ext_resource type="Texture2D" uid="uid://daqcl3fyxf4t6" path="res://menu/choose_character/personalidades/mb_perso4.png" id="13_qumro"]
+[ext_resource type="Texture2D" uid="uid://iuys7m65ncqa" path="res://menu/choose_character/ei_normal.png" id="14_324vb"]
+[ext_resource type="Texture2D" uid="uid://cmn4vrmux1wqv" path="res://menu/choose_character/ei_true.png" id="14_ivohy"]
+[ext_resource type="Texture2D" uid="uid://g0g7o1fuqkre" path="res://menu/choose_character/personalidades/mb_perso5.png" id="14_vsn65"]
+[ext_resource type="Texture2D" uid="uid://dpk1hl14klpq5" path="res://menu/choose_character/personalidades/ei_perso1.png" id="15_y4ks0"]
+[ext_resource type="Texture2D" uid="uid://le68slfgn3ik" path="res://menu/choose_character/nf_true.png" id="16_8w61y"]
+[ext_resource type="Script" uid="uid://c2c1oavrwoli" path="res://menu/choose_character/ei_perso.gd" id="16_36liy"]
+[ext_resource type="Texture2D" uid="uid://dwyyp8rqq3b8q" path="res://menu/choose_character/nf_normal.png" id="17_21crc"]
+[ext_resource type="Texture2D" uid="uid://crorxip453kvd" path="res://menu/choose_character/personalidades/ei_perso2.png" id="17_jf7nd"]
+[ext_resource type="Texture2D" uid="uid://b6g476ou2t4aj" path="res://menu/choose_character/personalidades/ei_perso3.png" id="18_gavby"]
+[ext_resource type="Texture2D" uid="uid://cmoh537rvk8ej" path="res://menu/choose_character/personalidades/ei_perso4.png" id="19_om1l3"]
+[ext_resource type="Texture2D" uid="uid://w0vcx7q2g5jj" path="res://menu/choose_character/personalidades/ei_perso5.png" id="20_6gnma"]
+[ext_resource type="Texture2D" uid="uid://d2ieetesyspod" path="res://menu/choose_character/personalidades/nf_perso1.png" id="21_j7yao"]
+[ext_resource type="Texture2D" uid="uid://bwb6vs2gdsr4k" path="res://menu/choose_character/personalidades/button_perso_false.png" id="22_m37nn"]
+[ext_resource type="Script" uid="uid://bgphjd5ct6p1h" path="res://menu/choose_character/nf_perso.gd" id="22_s4hkx"]
+[ext_resource type="Texture2D" uid="uid://p0m4iqsvy05e" path="res://menu/choose_character/personalidades/button_perso_push.png" id="23_6kjn2"]
+[ext_resource type="Texture2D" uid="uid://6hnpgl0q1bv7" path="res://menu/choose_character/personalidades/nf_perso2.png" id="23_gewmq"]
+[ext_resource type="Texture2D" uid="uid://l01uhq6iw3js" path="res://menu/choose_character/personalidades/button_perso_true.png" id="24_06xvp"]
+[ext_resource type="Texture2D" uid="uid://ceqmypxpne7pp" path="res://menu/choose_character/personalidades/nf_perso3.png" id="24_7jqoa"]
+[ext_resource type="Texture2D" uid="uid://pv6kuf0simha" path="res://menu/choose_character/personalidades/mb_perso1.png" id="25_6kjn2"]
+[ext_resource type="Texture2D" uid="uid://cft34wxhwcrh8" path="res://menu/choose_character/personalidades/nf_perso4.png" id="25_rvime"]
+[ext_resource type="Texture2D" uid="uid://bhyw6trrxlch2" path="res://menu/choose_character/personalidades/nf_perso5.png" id="26_2a52h"]
+[ext_resource type="Texture2D" uid="uid://68w56fh0r1mm" path="res://menu/level_menu/arrow_left.png" id="43_q4jn2"]
+[ext_resource type="AudioStream" uid="uid://cgxpjli0okmqj" path="res://menu/sound/select.wav" id="44_sound1"]
+[ext_resource type="AudioStream" uid="uid://dv5ldgr46tl2" path="res://menu/sound/apretarboton.wav" id="45_sound2"]
+
+[sub_resource type="Resource" id="Resource_rhfay"]
+script = ExtResource("2_5thor")
+Key = "morphblade"
+Imagen = ExtResource("2_pi0qd")
+Background = ExtResource("1_8miaq")
+Name = "MorphBlade"
+Description = "espada"
+AttDamage = "70"
+AttRange = "2"
+metadata/_custom_type_script = "uid://bttbdnxe8giih"
+
+[sub_resource type="Resource" id="Resource_21crc"]
+script = ExtResource("2_5thor")
+Key = "eidonol"
+Imagen = ExtResource("6_e88ij")
+Background = ExtResource("5_vpp8e")
+Name = "Eidonol"
+Description = "guadaña"
+AttDamage = "50"
+AttRange = "3"
+metadata/_custom_type_script = "uid://bttbdnxe8giih"
+
+[sub_resource type="Resource" id="Resource_rwupr"]
+script = ExtResource("2_5thor")
+Key = "nightfall"
+Imagen = ExtResource("8_ivohy")
+Background = ExtResource("7_fj42r")
+Name = "Nightfall"
+Description = "mago xdxd"
+AttDamage = "20"
+AttRange = "6"
+metadata/_custom_type_script = "uid://bttbdnxe8giih"
+
+[sub_resource type="Resource" id="Resource_qawoc"]
+script = ExtResource("10_320as")
+Key = "perso1"
+Icono = ExtResource("25_6kjn2")
+Name = "longsword"
+Desc = "Waits for the perfect moment."
+metadata/_custom_type_script = "uid://hhr62f3lljqx"
+
+[sub_resource type="Resource" id="Resource_qumon"]
+script = ExtResource("10_320as")
+Key = "perso2"
+Icono = ExtResource("11_q4jn2")
+Name = "daga"
+Desc = "Quick and precise justice"
+metadata/_custom_type_script = "uid://hhr62f3lljqx"
+
+[sub_resource type="Resource" id="Resource_rvax5"]
+script = ExtResource("10_320as")
+Key = "perso3"
+Icono = ExtResource("12_bmdli")
+Name = "katana"
+Desc = "One cut, one brave spirit"
+metadata/_custom_type_script = "uid://hhr62f3lljqx"
+
+[sub_resource type="Resource" id="Resource_4g2m0"]
+script = ExtResource("10_320as")
+Key = "perso4"
+Icono = ExtResource("13_qumro")
+Name = "magic_sword"
+Desc = "Power that choses to protect"
+metadata/_custom_type_script = "uid://hhr62f3lljqx"
+
+[sub_resource type="Resource" id="Resource_fr478"]
+script = ExtResource("10_320as")
+Key = "perso5"
+Icono = ExtResource("14_vsn65")
+Name = "sword_shield"
+Desc = "Never retreats, never surrender"
+metadata/_custom_type_script = "uid://hhr62f3lljqx"
+
+[sub_resource type="Resource" id="Resource_ef8vi"]
+script = ExtResource("16_36liy")
+Key = "perso1"
+Icono = ExtResource("15_y4ks0")
+Name = "demon"
+Desc = "Reaps souls without fear"
+metadata/_custom_type_script = "uid://c2c1oavrwoli"
+
+[sub_resource type="Resource" id="Resource_ihtuo"]
+script = ExtResource("16_36liy")
+Key = "perso2"
+Icono = ExtResource("17_jf7nd")
+Name = "caring"
+Desc = "A gentle and merciful end"
+metadata/_custom_type_script = "uid://c2c1oavrwoli"
+
+[sub_resource type="Resource" id="Resource_m6hhl"]
+script = ExtResource("16_36liy")
+Key = "perso3"
+Icono = ExtResource("18_gavby")
+Name = "normal"
+Desc = "Reaps only what is due"
+metadata/_custom_type_script = "uid://c2c1oavrwoli"
+
+[sub_resource type="Resource" id="Resource_2sbcl"]
+script = ExtResource("16_36liy")
+Key = "perso4"
+Icono = ExtResource("19_om1l3")
+Name = "double"
+Desc = "Two blades, relentless effort"
+metadata/_custom_type_script = "uid://c2c1oavrwoli"
+
+[sub_resource type="Resource" id="Resource_fxd8p"]
+script = ExtResource("16_36liy")
+Key = "perso5"
+Icono = ExtResource("20_6gnma")
+Name = "death"
+Desc = "The inevitable end that waits"
+metadata/_custom_type_script = "uid://c2c1oavrwoli"
+
+[sub_resource type="Resource" id="Resource_y5sj7"]
+script = ExtResource("22_s4hkx")
+Key = "perso1"
+Icono = ExtResource("21_j7yao")
+Name = "monja"
+Desc = "Unbrekeable faith, pure power"
+metadata/_custom_type_script = "uid://bgphjd5ct6p1h"
+
+[sub_resource type="Resource" id="Resource_l0f4e"]
+script = ExtResource("22_s4hkx")
+Key = "perso2"
+Icono = ExtResource("23_gewmq")
+Name = "sabio"
+Desc = "Patience reveals great power"
+metadata/_custom_type_script = "uid://bgphjd5ct6p1h"
+
+[sub_resource type="Resource" id="Resource_n7ctw"]
+script = ExtResource("22_s4hkx")
+Key = "perso3"
+Icono = ExtResource("24_7jqoa")
+Name = "electrical"
+Desc = "Bold fury, storm unleashed"
+metadata/_custom_type_script = "uid://bgphjd5ct6p1h"
+
+[sub_resource type="Resource" id="Resource_16us3"]
+script = ExtResource("22_s4hkx")
+Key = "perso4"
+Icono = ExtResource("25_rvime")
+Name = "dark"
+Desc = "Balances the scales with shadow"
+metadata/_custom_type_script = "uid://bgphjd5ct6p1h"
+
+[sub_resource type="Resource" id="Resource_h54ya"]
+script = ExtResource("22_s4hkx")
+Key = "perso5"
+Icono = ExtResource("26_2a52h")
+Name = "love"
+Desc = "Harmony that heals and protects"
+metadata/_custom_type_script = "uid://bgphjd5ct6p1h"
+
+[sub_resource type="Animation" id="Animation_pi0qd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8miaq"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.28),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5thor"]
+_data = {
+&"RESET": SubResource("Animation_pi0qd"),
+&"fade_in": SubResource("Animation_8miaq")
+}
+
+[node name="character_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pi0qd")
+Character = Array[ExtResource("2_5thor")]([SubResource("Resource_rhfay"), SubResource("Resource_21crc"), SubResource("Resource_rwupr")])
+morphblade = Array[Resource]([SubResource("Resource_qawoc"), SubResource("Resource_qumon"), SubResource("Resource_rvax5"), SubResource("Resource_4g2m0"), SubResource("Resource_fr478")])
+eidonol = Array[Resource]([SubResource("Resource_ef8vi"), SubResource("Resource_ihtuo"), SubResource("Resource_m6hhl"), SubResource("Resource_2sbcl"), SubResource("Resource_fxd8p")])
+nightfall = Array[Resource]([SubResource("Resource_y5sj7"), SubResource("Resource_l0f4e"), SubResource("Resource_n7ctw"), SubResource("Resource_16us3"), SubResource("Resource_h54ya")])
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8miaq")
+expand_mode = 1
+
+[node name="sombraborde1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 248.0
+offset_right = 872.0
+offset_bottom = 648.0
+texture = ExtResource("9_8w61y")
+
+[node name="sombraborde2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_right = 840.0
+offset_bottom = 439.0
+rotation = -4.71303
+texture = ExtResource("9_8w61y")
+
+[node name="character" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -908.0
+offset_top = -613.0
+offset_right = 349.0
+offset_bottom = 224.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_pi0qd")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="character"]
+libraries = {
+&"": SubResource("AnimationLibrary_5thor")
+}
+autoplay = "fade_in"
+
+[node name="character info" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 80.0
+offset_right = 575.0
+offset_bottom = 288.0
+
+[node name="name" type="Label" parent="character info"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.498039)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.2)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("10_dggry")
+theme_override_font_sizes/font_size = 100
+text = "Name"
+
+[node name="desc" type="Label" parent="character info"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.498039)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("10_dggry")
+theme_override_font_sizes/font_size = 30
+text = "Description of the character"
+
+[node name="character info2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 250.0
+offset_right = 417.0
+offset_bottom = 394.0
+
+[node name="attdmg" type="Label" parent="character info2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.498039)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("10_dggry")
+theme_override_font_sizes/font_size = 40
+text = "attdmg"
+
+[node name="attrange" type="Label" parent="character info2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.498039)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("10_dggry")
+theme_override_font_sizes/font_size = 40
+text = "attrange"
+
+[node name="Attrange" type="Sprite2D" parent="."]
+position = Vector2(92.5, 373.75)
+scale = Vector2(0.463636, 0.46875)
+texture = ExtResource("11_324vb")
+
+[node name="Attdmg" type="Sprite2D" parent="."]
+position = Vector2(91.125, 298.375)
+scale = Vector2(0.571739, 0.523504)
+texture = ExtResource("12_21crc")
+
+[node name="pick_morphblade" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 448.0
+offset_right = 192.0
+offset_bottom = 584.0
+texture_normal = ExtResource("11_gqaf1")
+texture_pressed = ExtResource("12_e88ij")
+texture_hover = ExtResource("11_cge33")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="pick_eidonol" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 448.0
+offset_right = 328.0
+offset_bottom = 584.0
+texture_normal = ExtResource("14_324vb")
+texture_pressed = ExtResource("14_ivohy")
+texture_hover = ExtResource("12_gqaf1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="pick_nightfall" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 448.0
+offset_right = 472.0
+offset_bottom = 589.0
+texture_normal = ExtResource("17_21crc")
+texture_pressed = ExtResource("16_8w61y")
+texture_hover = ExtResource("13_324vb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 8.0
+offset_right = 1136.0
+offset_bottom = 129.0
+texture_normal = ExtResource("22_m37nn")
+texture_pressed = ExtResource("23_6kjn2")
+texture_hover = ExtResource("24_06xvp")
+stretch_mode = 4
+
+[node name="show_perso" type="Sprite2D" parent="."]
+position = Vector2(1076, 69.125)
+scale = Vector2(0.827586, 0.83427)
+texture = ExtResource("25_6kjn2")
+
+[node name="back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture_normal = ExtResource("43_q4jn2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_sound1")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_sound2")
+
+[connection signal="pressed" from="pick_morphblade" to="." method="_on_pick_morphblade_pressed"]
+[connection signal="pressed" from="pick_eidonol" to="." method="_on_pick_eidonol_pressed"]
+[connection signal="pressed" from="pick_nightfall" to="." method="_on_pick_nightfall_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

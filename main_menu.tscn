@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://drbson158ntxb"]
+
+[ext_resource type="FontFile" uid="uid://clfbawvi3av66" path="res://TrajanPro-Regular.ttf" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://cf2ja7eemwbk1" path="res://menu/mainmenu_bg.png" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://citissv4yr4yw" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://dmngtae8f61g7" path="res://menu/title.png" id="2_jix8l"]
+[ext_resource type="AudioStream" uid="uid://c6yxdej06iqmd" path="res://game ost.mp3" id="5_glbon"]
+[ext_resource type="Texture2D" uid="uid://cj0ij8s53gs5m" path="res://menu/arrow_right.png" id="6_w233d"]
+[ext_resource type="AudioStream" uid="uid://cgxpjli0okmqj" path="res://menu/sound/select.wav" id="7_q1j5k"]
+[ext_resource type="AudioStream" uid="uid://dv5ldgr46tl2" path="res://menu/sound/apretarboton.wav" id="8_vauvo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vrkn"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu7sn")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7vrkn")
+expand_mode = 1
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 83.0
+offset_right = 325.0
+offset_bottom = 343.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_jix8l")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_right = 136.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="button_newgame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7vrkn")
+text = "New Game"
+
+[node name="button_continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7vrkn")
+text = "Continue
+"
+
+[node name="button_settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7vrkn")
+text = "Settings
+"
+
+[node name="button_exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7vrkn")
+text = "Exit
+"
+
+[node name="musicamenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_glbon")
+autoplay = true
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_q1j5k")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vauvo")
+
+[node name="flecha" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 327.0
+offset_right = 458.0
+offset_bottom = 367.0
+texture = ExtResource("6_w233d")
+expand_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/button_newgame" to="." method="_on_button_newgame_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_exit" to="." method="_on_button_exit_pressed"]

@@ -1,0 +1,160 @@
+[gd_scene load_steps=16 format=3 uid="uid://iprk6rrb022q"]
+
+[ext_resource type="Script" uid="uid://boyy8x5c5kqdd" path="res://level_menu.gd" id="1_gd4f1"]
+[ext_resource type="VideoStream" uid="uid://ceenve7la2xjc" path="res://menu/level_menu/selecciondemapa-_online-video-cutter.com_-_online-video-cutter.com_.ogv" id="1_pssaq"]
+[ext_resource type="Script" uid="uid://jegwgyiryvb0" path="res://menu/level_menu/level_data.gd" id="2_7blhc"]
+[ext_resource type="FontFile" uid="uid://clfbawvi3av66" path="res://TrajanPro-Regular.ttf" id="2_krrsl"]
+[ext_resource type="Texture2D" uid="uid://0u177kuvoc60" path="res://menu/level_menu/Captura de pantalla 2025-09-04 122209.png" id="2_mcy63"]
+[ext_resource type="Texture2D" uid="uid://68w56fh0r1mm" path="res://menu/level_menu/arrow_left.png" id="3_w32vy"]
+[ext_resource type="Texture2D" uid="uid://bb003cxfd8xie" path="res://menu/level_menu/arrow_right.png" id="4_gd4f1"]
+[ext_resource type="Texture2D" uid="uid://by5brhitak2st" path="res://menu/level_menu/marco.png" id="4_lnidy"]
+[ext_resource type="Texture2D" uid="uid://cyagaumg883mm" path="res://menu/level_menu/Captura de pantalla 2025-09-07 220659.png" id="4_wj7nf"]
+[ext_resource type="Texture2D" uid="uid://clodca802k8li" path="res://menu/level_menu/marco_seleccionado.png" id="10_wj7nf"]
+[ext_resource type="AudioStream" uid="uid://cgxpjli0okmqj" path="res://menu/sound/select.wav" id="11_abcde"]
+[ext_resource type="AudioStream" uid="uid://dv5ldgr46tl2" path="res://menu/sound/apretarboton.wav" id="12_fghij"]
+
+[sub_resource type="Resource" id="Resource_y1rhc"]
+script = ExtResource("2_7blhc")
+Key = "stage1"
+Imagen = ExtResource("2_mcy63")
+Stage = "Stage 1"
+Name = "Path of Lost Echoes"
+metadata/_custom_type_script = "uid://jegwgyiryvb0"
+
+[sub_resource type="Resource" id="Resource_7blhc"]
+script = ExtResource("2_7blhc")
+Key = "stage2"
+Imagen = ExtResource("4_wj7nf")
+Stage = "Stage 2"
+Name = "Forgotten Bastion"
+metadata/_custom_type_script = "uid://jegwgyiryvb0"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7blhc"]
+
+[node name="level_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gd4f1")
+Niveles = Array[ExtResource("2_7blhc")]([SubResource("Resource_y1rhc"), SubResource("Resource_7blhc")])
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_pssaq")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -215.0
+offset_right = 467.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text_stage1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_krrsl")
+theme_override_font_sizes/font_size = 50
+text = "Stage 1:"
+horizontal_alignment = 1
+
+[node name="text_stagename1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_krrsl")
+theme_override_font_sizes/font_size = 50
+text = "Path of Lost Echoes"
+horizontal_alignment = 1
+
+[node name="button_left" type="Button" parent="."]
+layout_mode = 2
+offset_left = 57.5
+offset_top = 255.0
+offset_right = 168.5
+offset_bottom = 392.0
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7blhc")
+icon = ExtResource("3_w32vy")
+
+[node name="button_right" type="Button" parent="."]
+layout_mode = 2
+offset_left = 986.5
+offset_top = 254.0
+offset_right = 1094.5
+offset_bottom = 394.0
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7blhc")
+icon = ExtResource("4_gd4f1")
+
+[node name="stage_visual" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -130.0
+offset_right = 235.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -152.5
+offset_right = 289.0
+offset_bottom = 152.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_lnidy")
+texture_hover = ExtResource("10_wj7nf")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture_normal = ExtResource("3_w32vy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_abcde")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fghij")
+
+[connection signal="pressed" from="button_left" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="button_right" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

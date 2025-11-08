@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://f50xd5ihfqmk"]
+
+[ext_resource type="Script" uid="uid://k2vtb4srakkb" path="res://Escenas/enemigo/enemy.gd" id="1_2x86h"]
+[ext_resource type="Texture2D" uid="uid://b8t4f8tut1s7p" path="res://menu/assets_characters/enemy/idle.png" id="1_xi5yj"]
+[ext_resource type="Texture2D" uid="uid://cr3rmq52pewy" path="res://menu/assets_characters/enemy/walk1.png" id="2_2x86h"]
+[ext_resource type="Texture2D" uid="uid://dqa03dbaaeqtr" path="res://menu/assets_characters/enemy/walk2.png" id="3_30pus"]
+[ext_resource type="Texture2D" uid="uid://di3vl4iqlxf0n" path="res://menu/assets_characters/enemy/walk3.png" id="4_t72sf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bkwj"]
+size = Vector2(60, 66.4281)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jylor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xi5yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2x86h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_30pus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t72sf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="EnemyPath" type="PathFollow2D"]
+
+[node name="Enemy" type="CharacterBody2D" parent="." groups=["Enemy"]]
+script = ExtResource("1_2x86h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(-2, -0.801053)
+scale = Vector2(1.13236, 0.987566)
+shape = SubResource("RectangleShape2D_0bkwj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy" groups=["Enemy"]]
+scale = Vector2(0.0908203, 0.0898438)
+sprite_frames = SubResource("SpriteFrames_jylor")
+frame_progress = 0.335067
