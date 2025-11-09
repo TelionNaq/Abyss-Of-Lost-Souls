@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl8sxe5hdpti6"]
+
+[ext_resource type="FontFile" uid="uid://clfbawvi3av66" path="res://TrajanPro-Regular.ttf" id="1_mipa4"]
+[ext_resource type="Texture2D" uid="uid://cn71yk18a1hb7" path="res://menu/HUD/Characters/Sword.png" id="1_oqv1q"]
+[ext_resource type="Texture2D" uid="uid://oiikeicqxkhw" path="res://menu/botonpausa.png" id="3_0hk87"]
+[ext_resource type="Texture2D" uid="uid://bpcp2hctcwe17" path="res://menu/corazon.png" id="4_3uxrs"]
+[ext_resource type="Texture2D" uid="uid://ctigsgyk4pnnw" path="res://menu/moneda.png" id="5_k0les"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rondas" type="Label" parent="."]
+layout_mode = 0
+offset_left = 961.0
+offset_top = 20.0
+offset_right = 1080.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("1_mipa4")
+theme_override_font_sizes/font_size = 18
+text = "Round 1/50"
+
+[node name="Unidad" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 586.0
+offset_right = 246.0
+offset_bottom = 636.0
+texture_normal = ExtResource("1_oqv1q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Pause" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1099.0
+offset_top = 7.0
+offset_right = 1142.0
+offset_bottom = 49.0
+texture_normal = ExtResource("3_0hk87")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Vida" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 597.0
+offset_right = 75.0
+offset_bottom = 629.0
+
+[node name="TextureRect" type="TextureRect" parent="Vida"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_3uxrs")
+expand_mode = 1
+
+[node name="ValorVida" type="Label" parent="Vida"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mipa4")
+
+[node name="Dinerol" type="Label" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 607.0
+offset_right = 164.0
+offset_bottom = 630.0
+theme_override_fonts/font = ExtResource("1_mipa4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 595.0
+offset_right = 122.0
+offset_bottom = 632.0
+texture = ExtResource("5_k0les")
+expand_mode = 1
+
+[node name="ContadorRonda" type="Label" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 25.0
+offset_right = 543.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("1_mipa4")
+theme_override_font_sizes/font_size = 18

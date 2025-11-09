@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal enemy_defeated
+signal enemy_escaped
+
 # Este script asume que la escena del enemigo será una hija de un nodo PathFollow2D.
 # La estructura de la escena debería ser:
 # - Path2D (con la curva de tu camino dibujada)
@@ -45,8 +48,8 @@ func _process(delta):
         # Comprobamos si el enemigo ha llegado al final del camino.
         # progress_ratio es un valor de 0.0 (inicio) a 1.0 (final).
         if path_follow.progress_ratio >= 1.0:
-            # El enemigo llegó al final. Aquí es donde le harías daño al jugador.
-            # Por ahora, simplemente lo eliminamos de la escena.
+            # El enemigo llegó al final. Emitimos la señal y lo eliminamos.
+            enemy_escaped.emit()
             queue_free()
 
 # --- Opcional: Funciones adicionales para un enemigo ---
@@ -58,4 +61,5 @@ func _process(delta):
 func take_damage(amount):
     health -= amount
     if health <= 0:
+        enemy_defeated.emit() # Emitir la señal antes de morir
         queue_free() # El enemigo muere.

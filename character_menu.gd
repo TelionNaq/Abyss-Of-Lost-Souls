@@ -66,26 +66,36 @@ func get_current_personalities() -> Array[Resource]:
         _:
             return []
 
-func _on_pick_morphblade_pressed() -> void:
+const DOUBLE_CLICK_TIME_S = 0.4
+var last_press_time = 0
+var last_button_pressed = -1
+
+func _handle_character_selection(character_index: int) -> void:
     click_sound.play()
-    if current_character_index != 0:
-        current_character_index = 0
-        current_personality_index = 0
-        update_character_display()
+    
+    var current_time = Time.get_ticks_msec()
+    
+    if last_button_pressed == character_index and current_time - last_press_time < DOUBLE_CLICK_TIME_S * 1000:
+        # Double-click detected
+        get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel1/lv_1.tscn")
+    else:
+        # Single-click
+        if current_character_index != character_index:
+            current_character_index = character_index
+            current_personality_index = 0
+            update_character_display()
+        
+        last_press_time = current_time
+        last_button_pressed = character_index
+
+func _on_pick_morphblade_pressed() -> void:
+    _handle_character_selection(0)
 
 func _on_pick_eidonol_pressed() -> void:
-    click_sound.play()
-    if current_character_index != 1:
-        current_character_index = 1
-        current_personality_index = 0
-        update_character_display()
+    _handle_character_selection(1)
 
 func _on_pick_nightfall_pressed() -> void:
-    click_sound.play()
-    if current_character_index != 2:
-        current_character_index = 2
-        current_personality_index = 0
-        update_character_display()
+    _handle_character_selection(2)
 
 func _on_texture_button_pressed() -> void:
     click_sound.play()
