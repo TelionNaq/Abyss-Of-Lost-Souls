@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsegfkj5qm846"]
+[gd_scene load_steps=9 format=3 uid="uid://bsegfkj5qm846"]
 
 [ext_resource type="Texture2D" uid="uid://b5c5pd4in2x58" path="res://menu/menupausa.png" id="1_3iicy"]
+[ext_resource type="Script" uid="uid://d0n6gvt5le740" path="res://Escenas/HUD/pausa.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://csa67j5x57nq5" path="res://menu/resumenpausa.png" id="2_xyvuu"]
 [ext_resource type="Texture2D" uid="uid://dgm738rj6tgqs" path="res://menu/pausaresumenselec.png" id="3_1vrmi"]
 [ext_resource type="Texture2D" uid="uid://bsxok6l3i7ejj" path="res://menu/settingspausa.png" id="4_yo8bh"]
@@ -15,21 +16,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_abcde")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 offset_left = 341.0
-offset_top = 58.5
+offset_top = 59.0
 offset_right = 811.0
-offset_bottom = 589.5
+offset_bottom = 610.0
 texture = ExtResource("1_3iicy")
 expand_mode = 1
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 270.0
-offset_right = 701.0
+offset_left = 463.0
+offset_top = 295.0
+offset_right = 691.0
 offset_bottom = 373.0
 texture_normal = ExtResource("4_yo8bh")
 texture_pressed = ExtResource("5_5edjd")
@@ -39,10 +41,10 @@ stretch_mode = 0
 
 [node name="TextureButton3" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 405.0
-offset_right = 701.0
-offset_bottom = 490.0
+offset_left = 464.0
+offset_top = 423.0
+offset_right = 690.0
+offset_bottom = 488.0
 texture_normal = ExtResource("6_ihsay")
 texture_pressed = ExtResource("7_cp1v0")
 texture_hover = ExtResource("7_cp1v0")
@@ -51,10 +53,10 @@ stretch_mode = 0
 
 [node name="TextureButton4" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 458.0
-offset_top = 140.0
-offset_right = 699.0
-offset_bottom = 243.0
+offset_left = 459.0
+offset_top = 171.0
+offset_right = 695.0
+offset_bottom = 247.0
 texture_normal = ExtResource("2_xyvuu")
 texture_pressed = ExtResource("3_1vrmi")
 texture_hover = ExtResource("3_1vrmi")

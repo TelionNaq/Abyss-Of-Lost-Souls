@@ -18,6 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Music="*res://menu/music.gd"
+PlayerStats="*res://player_stats.gd"
+SaveManager="*res://save_manager.gd"
+GlobalState="*res://global_state.gd"
 
 [editor]
 

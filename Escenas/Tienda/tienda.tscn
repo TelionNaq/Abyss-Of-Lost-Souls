@@ -1,0 +1,256 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjtgtytbv03b5"]
+
+[ext_resource type="PackedScene" uid="uid://di7mi4l0ms24s" path="res://tienda.tscn" id="1_dt5sg"]
+[ext_resource type="FontFile" uid="uid://clfbawvi3av66" path="res://TrajanPro-Regular.ttf" id="2_5b4j3"]
+[ext_resource type="Texture2D" uid="uid://4c74l7a3nlch" path="res://menu/Coinshop.png" id="3_cl3u5"]
+
+[node name="Tienda" instance=ExtResource("1_dt5sg")]
+
+[node name="Menu Tienda(Cambiar)" parent="." index="0"]
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 303.0
+offset_top = -79.0
+offset_right = 836.0
+offset_bottom = 719.0
+
+[node name="Button Axe" parent="Menu Tienda(Cambiar)" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.566
+anchor_top = 0.095
+anchor_right = -0.566
+anchor_bottom = 0.095
+offset_left = 422.678
+offset_top = 157.19
+offset_right = 711.678
+offset_bottom = 254.19
+
+[node name="Rune Axe" parent="Menu Tienda(Cambiar)/Button Axe" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.469
+anchor_top = -1.61
+anchor_right = -1.469
+anchor_bottom = -1.61
+offset_left = 429.541
+offset_top = 157.17
+offset_right = 521.541
+offset_bottom = 254.17
+
+[node name="TextureRect" parent="Menu Tienda(Cambiar)/Button Axe/Rune Axe" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.682
+anchor_top = -1.628
+anchor_right = -4.682
+anchor_bottom = -1.628
+offset_left = 431.744
+offset_top = 163.916
+offset_right = 521.744
+offset_bottom = 259.916
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" parent="Menu Tienda(Cambiar)/Button Axe/Rune Axe/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.735
+anchor_top = -1.874
+anchor_right = -4.735
+anchor_bottom = -1.874
+offset_left = 515.012
+offset_top = 209.975
+offset_right = 708.012
+offset_bottom = 270.975
+
+[node name="VBoxContainer2" parent="Menu Tienda(Cambiar)/Button Axe/Rune Axe/TextureRect" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.735
+anchor_top = -1.82
+anchor_right = -4.735
+anchor_bottom = -1.82
+offset_left = 515.012
+offset_top = 175.794
+offset_right = 707.012
+offset_bottom = 198.794
+
+[node name="Button WHIP" parent="Menu Tienda(Cambiar)" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.568
+anchor_top = 0.091
+anchor_right = -0.568
+anchor_bottom = 0.091
+offset_left = 424.744
+offset_top = 301.382
+offset_right = 713.744
+offset_bottom = 398.382
+
+[node name="Worn whip" parent="Menu Tienda(Cambiar)/Button WHIP" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.469
+anchor_top = -3.086
+anchor_right = -1.469
+anchor_bottom = -3.086
+offset_left = 429.541
+offset_top = 300.342
+offset_right = 521.541
+offset_bottom = 397.342
+
+[node name="TextureRect" parent="Menu Tienda(Cambiar)/Button WHIP/Worn whip" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.676
+anchor_top = -3.071
+anchor_right = -4.676
+anchor_bottom = -3.071
+offset_left = 431.192
+offset_top = 303.887
+offset_right = 521.192
+offset_bottom = 399.887
+
+[node name="VBoxContainer" parent="Menu Tienda(Cambiar)/Button WHIP/Worn whip/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.717
+anchor_top = -3.423
+anchor_right = -4.717
+anchor_bottom = -3.423
+offset_left = 513.392
+offset_top = 358.679
+offset_right = 706.392
+offset_bottom = 419.679
+
+[node name="VBoxContainer2" parent="Menu Tienda(Cambiar)/Button WHIP/Worn whip/TextureRect" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.753
+anchor_top = -3.405
+anchor_right = -4.753
+anchor_bottom = -3.405
+offset_left = 517.619
+offset_top = 327.954
+offset_right = 709.619
+offset_bottom = 350.954
+
+[node name="Button SCHYTHE" parent="Menu Tienda(Cambiar)" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.565
+anchor_top = 0.091
+anchor_right = -0.565
+anchor_bottom = 0.091
+offset_left = 423.145
+offset_top = 442.382
+offset_right = 712.145
+offset_bottom = 539.382
+
+[node name="Maiden´s Shythe" parent="Menu Tienda(Cambiar)/Button SCHYTHE" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.472
+anchor_top = -4.539
+anchor_right = -1.472
+anchor_bottom = -4.539
+offset_left = 430.408
+offset_top = 441.283
+offset_right = 522.408
+offset_bottom = 538.283
+
+[node name="TextureRect" parent="Menu Tienda(Cambiar)/Button SCHYTHE/Maiden´s Shythe" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.663
+anchor_top = -4.501
+anchor_right = -4.663
+anchor_bottom = -4.501
+offset_left = 429.996
+offset_top = 442.597
+offset_right = 519.996
+offset_bottom = 538.597
+
+[node name="VBoxContainer" parent="Menu Tienda(Cambiar)/Button SCHYTHE/Maiden´s Shythe/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.735
+anchor_top = -4.991
+anchor_right = -4.735
+anchor_bottom = -4.991
+offset_left = 515.15
+offset_top = 503.136
+offset_right = 708.15
+offset_bottom = 570.136
+
+[node name="VBoxContainer2" parent="Menu Tienda(Cambiar)/Button SCHYTHE/Maiden´s Shythe/TextureRect" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.717
+anchor_top = -5.027
+anchor_right = -4.717
+anchor_bottom = -5.027
+offset_left = 514.379
+offset_top = 480.444
+offset_right = 706.379
+offset_bottom = 503.444
+
+[node name="axe" type="Label" parent="." index="1"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 256.0
+offset_right = 509.0
+offset_bottom = 279.0
+theme_override_fonts/font = ExtResource("2_5b4j3")
+theme_override_font_sizes/font_size = 16
+text = "60"
+
+[node name="TextureRect" type="TextureRect" parent="." index="2"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 250.0
+offset_right = 467.0
+offset_bottom = 275.0
+texture = ExtResource("3_cl3u5")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." index="3"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 391.0
+offset_right = 467.0
+offset_bottom = 416.0
+texture = ExtResource("3_cl3u5")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." index="4"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 532.0
+offset_right = 467.0
+offset_bottom = 557.0
+texture = ExtResource("3_cl3u5")
+expand_mode = 1
+
+[node name="whip" type="Label" parent="." index="5"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 397.0
+offset_right = 508.0
+offset_bottom = 420.0
+theme_override_fonts/font = ExtResource("2_5b4j3")
+theme_override_font_sizes/font_size = 16
+text = "60"
+
+[node name="scythe" type="Label" parent="." index="6"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 538.0
+offset_right = 509.0
+offset_bottom = 561.0
+theme_override_fonts/font = ExtResource("2_5b4j3")
+theme_override_font_sizes/font_size = 16
+text = "60"

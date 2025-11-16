@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://tly24jfi470m"]
+[gd_scene load_steps=7 format=3 uid="uid://tly24jfi470m"]
 
 [ext_resource type="Texture2D" uid="uid://bf7svuw1nebh2" path="res://menu/perder.png" id="1_64p4j"]
+[ext_resource type="Script" uid="uid://bplk8wd6gju63" path="res://Escenas/HUD/perder.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://df1ec0rt30jub" path="res://menu/exitpausa.png" id="2_yfxkk"]
 [ext_resource type="Texture2D" uid="uid://bahlyfgmwacuj" path="res://menu/exitselect.png" id="3_2iw8o"]
 [ext_resource type="Texture2D" uid="uid://cd07ns3et4ow3" path="res://menu/Tryagain.png" id="4_urcnt"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_abcde")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

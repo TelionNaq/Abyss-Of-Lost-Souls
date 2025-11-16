@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://di3vl4iqlxf0n" path="res://menu/assets_characters/enemy/walk3.png" id="4_t72sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bkwj"]
-size = Vector2(60, 66.4281)
+size = Vector2(106.856, 118.473)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jylor"]
 animations = [{

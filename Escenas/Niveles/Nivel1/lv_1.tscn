@@ -1,11 +1,14 @@
-[gd_scene load_steps=30 format=4 uid="uid://ci36oc8ajmwr7"]
+[gd_scene load_steps=33 format=4 uid="uid://ci36oc8ajmwr7"]
 
 [ext_resource type="TileSet" uid="uid://8o2vxu4n5d7d" path="res://TileSet/lv_1.tres" id="1_38kwa"]
+[ext_resource type="Script" uid="uid://bjo431i8etmd7" path="res://Escenas/Niveles/Nivel1/lv_1.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://cuyp3yv0jb1i1" path="res://menu/maps/lv1/arbol1.png" id="2_ia52y"]
 [ext_resource type="Texture2D" uid="uid://p82ety55m10u" path="res://menu/maps/lv1/arbol2.png" id="3_t06u5"]
 [ext_resource type="Texture2D" uid="uid://cq255cuiturbd" path="res://menu/maps/lv1/arbol3.png" id="4_1hlc3"]
 [ext_resource type="PackedScene" uid="uid://cl8sxe5hdpti6" path="res://Escenas/HUD/hud.tscn" id="7_s4je8"]
 [ext_resource type="Script" uid="uid://co3eolsi4i7lc" path="res://Script/Round/round_manager.gd" id="8_xxxx"]
+[ext_resource type="AudioStream" uid="uid://cufaqtslx0uep" path="res://menu/sound/landing-on-grass-40650.mp3" id="9_yyyy"]
+[ext_resource type="AudioStream" uid="uid://8eggb1bnjijd" path="res://menu/sound/Shadows of the Vale.mp3" id="10_music"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4je8"]
 texture = ExtResource("2_ia52y")
@@ -234,7 +237,7 @@ _data = {
 point_count = 8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t06u5"]
-radius = 5.0
+radius = 5.09902
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hlc3"]
 size = Vector2(217, 143)
@@ -243,19 +246,19 @@ size = Vector2(217, 143)
 size = Vector2(160, 231)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du661"]
-size = Vector2(241, 167)
+size = Vector2(241, 161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnho1"]
 size = Vector2(112, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55ovg"]
-size = Vector2(610, 95)
+size = Vector2(610, 87)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otj30"]
 size = Vector2(94, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqwg7"]
-size = Vector2(22, 64)
+size = Vector2(19, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmogi"]
 size = Vector2(82, 295)
@@ -288,6 +291,7 @@ size = Vector2(141, 106)
 size = Vector2(46, 77)
 
 [node name="lv1" type="Node2D"]
+script = ExtResource("1_abcde")
 
 [node name="Pasto" type="TileMapLayer" parent="."]
 z_index = -1
@@ -310,7 +314,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildChecker"]
-position = Vector2(274, 129)
 shape = SubResource("CircleShape2D_t06u5")
 
 [node name="BuildZone" type="Area2D" parent="."]
@@ -328,7 +331,7 @@ shape = SubResource("RectangleShape2D_s4je8")
 debug_color = Color(0.777443, 0.190368, 0.957967, 0.42)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="BuildZone"]
-position = Vector2(281.5, 387.5)
+position = Vector2(281.5, 390.5)
 shape = SubResource("RectangleShape2D_du661")
 debug_color = Color(0.777443, 0.190368, 0.957967, 0.42)
 
@@ -338,7 +341,7 @@ shape = SubResource("RectangleShape2D_fnho1")
 debug_color = Color(0.777443, 0.190368, 0.957967, 0.42)
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="BuildZone"]
-position = Vector2(620, 47.5)
+position = Vector2(620, 43.5)
 shape = SubResource("RectangleShape2D_55ovg")
 debug_color = Color(0.777443, 0.190368, 0.957967, 0.42)
 
@@ -348,7 +351,7 @@ shape = SubResource("RectangleShape2D_otj30")
 debug_color = Color(0.777443, 0.190368, 0.957967, 0.42)
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="BuildZone"]
-position = Vector2(325, 127)
+position = Vector2(323.5, 127)
 shape = SubResource("RectangleShape2D_eqwg7")
 debug_color = Color(0.777443, 0.190368, 0.957967, 0.42)
 
@@ -419,3 +422,11 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_s4je8")]
+
+[node name="PlacementSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_yyyy")
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_music")
+volume_db = -15.0
+autoplay = true

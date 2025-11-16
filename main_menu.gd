@@ -6,9 +6,17 @@ extends Control
 @onready var hover_sound = $HoverSound
 @onready var click_sound = $ClickSound
 
+@onready var new_game_confirmation = $NewGameConfirmation
+@onready var continue_button = $VBoxContainer/button_continue
+
 func _ready() -> void:
     music.play()
     arrow.hide()
+    
+    if not SaveManager.has_save():
+        continue_button.disabled = true
+    
+    new_game_confirmation.confirmed.connect(_on_new_game_confirmed)
     
     # Connect mouse signals for each button
     for button in buttons_container.get_children():
@@ -19,6 +27,8 @@ func _ready() -> void:
     buttons_container.mouse_exited.connect(_on_buttons_container_mouse_exited)
 
 func _on_button_mouse_entered(button: Button) -> void:
+    if button.disabled:
+        return
     hover_sound.play()
     arrow.show()
     # Center the arrow vertically with the button and position it to the left
@@ -34,17 +44,30 @@ func _on_button_mouse_entered(button: Button) -> void:
 func _on_buttons_container_mouse_exited() -> void:
     arrow.hide()
 
-func _on_button_newgame_pressed() -> void:
+func _on_button_newgame_pressed():
     click_sound.play()
+    if SaveManager.has_save():
+        new_game_confirmation.show()
+    else:
+        start_new_game()
+
+func start_new_game():
+    PlayerStats.reset()
+    SaveManager.delete_save()
+    GlobalState.load_game_on_start = false
     get_tree().change_scene_to_file("res://level_menu.tscn")
+
+func _on_new_game_confirmed():
+    start_new_game()
 
 func _on_button_continue_pressed() -> void:
     click_sound.play()
-    pass # Replace with function body.
+    GlobalState.load_game_on_start = true
+    get_tree().change_scene_to_file("res://Escenas/Niveles/Nivel1/lv_1.tscn")
 
 func _on_button_settings_pressed() -> void:
     click_sound.play()
-    pass # Replace with function body.
+    get_tree().change_scene_to_file("res://settings.tscn")
 
 func _on_button_exit_pressed() -> void:
     click_sound.play()

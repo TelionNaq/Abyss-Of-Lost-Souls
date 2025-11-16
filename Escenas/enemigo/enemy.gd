@@ -17,6 +17,12 @@ signal enemy_escaped
 # Se obtiene automáticamente al iniciar.
 @onready var path_follow: PathFollow2D = get_parent()
 
+# Variable para la vida del enemigo.
+@export var health: int = 65
+var is_dead: bool = false
+var original_speed: float = -1.0
+var slow_timer: Timer
+
 func _ready():
     # Obtenemos la referencia al nodo AnimatedSprite2D. 
     # El '$' es un atajo para get_node().
@@ -36,6 +42,11 @@ func _ready():
     # Iniciamos la animación de caminar. 
     # El nombre "default" lo he sacado de tu archivo .tscn.
     animated_sprite.play("default") # <-- AÑADIDO: Inicia la animación.
+    
+    slow_timer = Timer.new()
+    slow_timer.one_shot = true
+    slow_timer.timeout.connect(_on_slow_timer_timeout)
+    add_child(slow_timer)
 
 
 func _process(delta):
@@ -54,12 +65,26 @@ func _process(delta):
 
 # --- Opcional: Funciones adicionales para un enemigo ---
 
-# Variable para la vida del enemigo.
-@export var health: int = 50
-
-# Una función para cuando el enemigo recibe daño.
 func take_damage(amount):
+    if is_dead:
+        return
+
     health -= amount
     if health <= 0:
-        enemy_defeated.emit() # Emitir la señal antes de morir
-        queue_free() # El enemigo muere.
+        is_dead = true
+        enemy_defeated.emit()
+        queue_free()
+
+func apply_knockback(strength: float):
+    if path_follow:
+        path_follow.progress = max(0, path_follow.progress - strength)
+
+func apply_slow(duration: float, amount: float):
+    if original_speed == -1.0:
+        original_speed = speed
+    
+    speed = original_speed * (1.0 - amount)
+    slow_timer.start(duration)
+
+func _on_slow_timer_timeout():
+    speed = original_speed

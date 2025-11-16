@@ -117,6 +117,12 @@ offset_bottom = 367.0
 texture = ExtResource("6_w233d")
 expand_mode = 1
 
+[node name="NewGameConfirmation" type="ConfirmationDialog" parent="."]
+title = "New Game"
+initial_position = 2
+size = Vector2i(300, 100)
+dialog_text = "Your previous progress will be erased. Continue?"
+
 [connection signal="pressed" from="VBoxContainer/button_newgame" to="." method="_on_button_newgame_pressed"]
 [connection signal="pressed" from="VBoxContainer/button_continue" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/button_settings" to="." method="_on_button_settings_pressed"]

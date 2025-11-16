@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bitqpwnvmi6if" path="res://menu/choose_character/bg_morphblade.png" id="1_8miaq"]
 [ext_resource type="Script" uid="uid://d2gihlc6saqp7" path="res://character_menu.gd" id="1_pi0qd"]
 [ext_resource type="Script" uid="uid://bttbdnxe8giih" path="res://menu/choose_character/character_data.gd" id="2_5thor"]
-[ext_resource type="Texture2D" uid="uid://rgsp1rk5lqgy" path="res://menu/choose_character/character_swordman.png" id="2_pi0qd"]
+[ext_resource type="Texture2D" uid="uid://3fv2btxfy72o" path="res://menu/assets_characters/Sword/SwordSelectCH.png" id="4_vsn65"]
 [ext_resource type="Texture2D" uid="uid://fqf71nb48kdm" path="res://menu/choose_character/bg_death.png" id="5_vpp8e"]
-[ext_resource type="Texture2D" uid="uid://bkux6wgef78n5" path="res://menu/choose_character/character_assasin.png" id="6_e88ij"]
+[ext_resource type="Texture2D" uid="uid://bv6p71koththd" path="res://menu/assets_characters/Guadaña/chGua.png" id="6_y4ks0"]
 [ext_resource type="Texture2D" uid="uid://fdchuwteac4p" path="res://menu/choose_character/bg_magician.png" id="7_fj42r"]
-[ext_resource type="Texture2D" uid="uid://cwv23cbvl6xxf" path="res://menu/choose_character/character_magician.png" id="8_ivohy"]
+[ext_resource type="Texture2D" uid="uid://c8nqednnq4i2h" path="res://menu/assets_characters/mago/magoCH.png" id="8_36liy"]
 [ext_resource type="Texture2D" uid="uid://j662tvjq7epa" path="res://menu/choose_character/border1.png" id="9_8w61y"]
 [ext_resource type="Script" uid="uid://hhr62f3lljqx" path="res://menu/choose_character/mb_perso.gd" id="10_320as"]
 [ext_resource type="FontFile" uid="uid://4ebsb7wkw3f0" path="res://TrajanPro-Bold.otf" id="10_dggry"]
@@ -49,7 +49,7 @@
 [sub_resource type="Resource" id="Resource_rhfay"]
 script = ExtResource("2_5thor")
 Key = "morphblade"
-Imagen = ExtResource("2_pi0qd")
+Imagen = ExtResource("4_vsn65")
 Background = ExtResource("1_8miaq")
 Name = "MorphBlade"
 Description = "espada"
@@ -60,7 +60,7 @@ metadata/_custom_type_script = "uid://bttbdnxe8giih"
 [sub_resource type="Resource" id="Resource_21crc"]
 script = ExtResource("2_5thor")
 Key = "eidonol"
-Imagen = ExtResource("6_e88ij")
+Imagen = ExtResource("6_y4ks0")
 Background = ExtResource("5_vpp8e")
 Name = "Eidonol"
 Description = "guadaña"
@@ -71,7 +71,7 @@ metadata/_custom_type_script = "uid://bttbdnxe8giih"
 [sub_resource type="Resource" id="Resource_rwupr"]
 script = ExtResource("2_5thor")
 Key = "nightfall"
-Imagen = ExtResource("8_ivohy")
+Imagen = ExtResource("8_36liy")
 Background = ExtResource("7_fj42r")
 Name = "Nightfall"
 Description = "mago xdxd"
@@ -304,15 +304,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -908.0
-offset_top = -613.0
-offset_right = 349.0
-offset_bottom = 224.0
+offset_left = -732.0
+offset_top = -693.0
+offset_right = 213.0
+offset_bottom = 395.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_pi0qd")
+texture = ExtResource("4_vsn65")
 expand_mode = 1
-stretch_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="character"]
 libraries = {
